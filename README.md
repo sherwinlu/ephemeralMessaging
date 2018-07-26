@@ -1,7 +1,6 @@
 # Text Message Service
 
-Simple ephemeral text message service. You can think of it a little like Snapchat. The service should implement a
-hot/cold storage system where expired messages are stored separately from unexpired messages.
+Simple ephemeral text message service. You can think of it a little like Snapchat.
 
 ## Compiling the project
 

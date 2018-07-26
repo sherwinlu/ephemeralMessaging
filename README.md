@@ -81,12 +81,11 @@ the 'hot' storage until all the data have been successfully moved.
 This could potentially be an issue if the database is backed up or slow as the job runs every 30 seconds and if the
 cleanup job takes more than 30 seconds to complete, that could be an issue.
 
+Error handling and logging all needs to be handled better. Right now if there's an error, it throws the error back, for example if the database is down, it'll report that to the client.
 
 ## Future improvements
 
-Besides adding additional logging and adding Unit tests the API isn't secure. It needs to either be deployed behind
-a firewall in which case the network is handling the security or it will need some sort of authentication to ensure
-that whomever is calling the REST APIs is authenticated.
+Besides adding additional logging, error handling and adding Unit tests the APIs aren't secure. It needs to either be deployed behind a firewall in which case the network is handling the security or it will need some sort of authentication to ensure that whomever is calling the REST APIs is authenticated.
 
 Also, Hazelcast would need to be configured (right now it's using the default configuration) to more properly behave.
 

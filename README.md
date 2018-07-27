@@ -26,7 +26,7 @@ For the project to run, you must have:
 
 A Dockerfile is included that will build a MySQL database and run it inside the Docker container and expose it externally.
 It will also automatically populate the SQL script as well. To do so, just run the following command from the following commands
-from the src/resources/db directory.
+from the src/main/resources/db directory.
 
 ```
 % docker build -t slu/fitnesspaldb .

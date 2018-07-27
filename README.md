@@ -18,22 +18,19 @@ This should automatically download and install all needed jars for the project
 
 For the project to run, you must have:
 
+* Docker
 * Maven 3.x
-* MySQL 5.x
 * JDK 8
-
-For the MySQL server, it assumes the following:
-
-* MySQL server is running locally (port 3306)
-* MySQL userName is: root
-* MySQL password is: abcd1234
 
 ### Running the project
 
-Run the following sql script to create the schema for the database
+A Dockerfile is included that will build a MySQL database and run it inside the Docker container and expose it externally.
+It will also automatically populate the SQL script as well. To do so, just run the following command from the following commands
+from the src/resources/db directory.
 
 ```
-src/main/resources/db/schema.sql
+% docker build -t slu/fitnesspaldb .
+% docker run --name=messagingdb -d --publish 3306:3306 slu/fitnesspaldb
 ```
 
 The servjce was written as a spring-boot application and is configured to build a self containing jar that will automatically
